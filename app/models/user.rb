@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_many :comments, inverse_of: 'author'
-  has_many :posts, inverse_of: 'author'
-  has_many :likes, inverse_of: 'author'
+  has_many :comments, foreign_key: 'author_id'
+  has_many :posts, foreign_key: 'author_id'
+  has_many :likes, foreign_key: 'author_id'
   def most_recent
-    Post.where(author_id).limit(3).order(created_at: :desc)
+    posts.order(created_at: :desc).limit(3)
   end
 end
