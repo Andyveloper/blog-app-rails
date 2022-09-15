@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   has_many :likes
-  has_many :comments
+  has_many :comments, inverse_of: 'post'
   belongs_to :author, class_name: 'User'
 
   def self.update_post_counter(user)
