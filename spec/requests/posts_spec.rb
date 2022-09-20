@@ -9,5 +9,11 @@ RSpec.describe 'Posts', type: :request do
       get '/posts/index'
       expect(response).to have_http_status(:success)
     end
+    it 'returns correct rendering template' do
+      expect(response).to render_template(:index)
+    end
+    it 'returns correct body placeholder' do
+      expect(response.body).to include('Find me in app/views/posts/index.html.erb')
+    end
   end
 end
