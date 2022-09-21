@@ -66,6 +66,7 @@ group :development do
 end
 
 group :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   #   gem "capybara"
