@@ -1,10 +1,12 @@
-<div class="justify-items-center">
+<div class="">
   <% @users.each do |user| %>
-    <div>
-      <img src = <%= user.photo%> />
-      <div>
-        <div><%= user.name %></div>
-        <span><%= user.post_counter %></span>
+    <div class="">
+      <div class="">
+        <img src= <%= user.photo%> />
+      </div>
+      <div class="">
+        <div class="">Username: <%= user.name %></div>
+        <span class="">Posts: <%= user.post_counter %></span>
       </div>
     </div>
   <% end %>
