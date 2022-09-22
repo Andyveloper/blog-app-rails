@@ -13,4 +13,6 @@
  *= require_self
  */
 
- @use "users";
+ @import './partials/reset';
+ @import './partials/posts';
+ @import './partials/users';

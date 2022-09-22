@@ -1,0 +1,11 @@
+$transparent_bg: transparentize(#39b9da, 0.1);
+$transparent_bg_card: transparentize(#7139da, 0.1);
+
+.user_container {
+    background-color: $transparent_bg;
+    &__card {
+        display: flex;
+        background-color: $transparent_bg_card;
+
+    }
+}
