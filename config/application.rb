@@ -16,8 +16,8 @@ module BlogAppRails
 
     config.load_defaults 7.0
 
-    config.assets.css_compressor = nil
-
+    # config.assets.css_compressor = nil
+    
   end
 
 end

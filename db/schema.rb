@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_14_230613) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "text"
     t.integer "comments_counter"
     t.integer "likes_counter"
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_14_230613) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "photo"
     t.text "bio"
     t.integer "post_counter"
