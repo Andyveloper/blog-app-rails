@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
-  def index; end
+  def index
+    @users = User.find(params[:id])
+    @posts = @user.posts
+  end
 
   def show
-    puts params
+    @post = Post.find(params[:id])
+    @comments = @post.comments
   end
 end

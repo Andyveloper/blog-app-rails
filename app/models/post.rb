@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   belongs_to :author, class_name: 'User'
 
-  after_initialize do |post|
+  after_create do |post|
     post.likes_counter = 0
 
     post.comments_counter = 0

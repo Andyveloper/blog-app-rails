@@ -1,0 +1,13 @@
+<div class="user_container">
+  <% @users.each do |user| %>
+    <div class="user_container__card">
+      <div class="user_container__card__image">
+        <img src= <%= user.photo%> />
+      </div>
+      <div class="user_container__card__info">
+        <div class="user_container__card__info__name">Username: <%= user.name %></div>
+        <span class="user_container__card__info__post">Posts: <%= user.post_counter %></span>
+      </div>
+    </div>
+  <% end %>
+</div>
