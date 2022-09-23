@@ -1,2 +1,10 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>User: <%= @user.name %></h1>
+<p>User details:</p>
+<%= link_to '< Back', users_path %>
+<%= render 'users/user'%>
+
+<%if @user.posts.empty?%>
+  <h3>This user has no posts</h3>
+<%else%>
+  <%= render 'posts/posts' %>
+<%end%>
