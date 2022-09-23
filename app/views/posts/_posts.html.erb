@@ -1,6 +1,6 @@
 <div class="post_container">
   <div class="post_container__post">
-    <%@user.posts.each do |post|%>
+    <%@posts.each do |post|%>
     <div class="post_container__post__post">
       <h2>Post # <%= post.id %></h2>
       <p><%= post.text %></p>
@@ -19,6 +19,7 @@
         </li>
       <% end %>
       </ul>
+      <%= link_to 'See all comments', user_post_path(post.id)%>
       <%end%>
     </div>
     <hr>

@@ -8,7 +8,7 @@
   </div>
   <div class="post_container__posts__full_comments">
     <ul>
-    <% @post.comments.each do |comment|%>
+    <% @post.most_recent.each do |comment|%>
       <li>
         <%= comment.author.name%>: <%= comment.text %>
       </li>
