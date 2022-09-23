@@ -6,7 +6,7 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'sass-rails'
 
-gem "sassc-rails"
+gem 'sassc-rails'
 
 gem 'rails', '~> 7.0.4'
 
@@ -79,4 +79,4 @@ end
 
 gem 'tailwindcss-rails', '~> 2.0'
 
-gem "dartsass-rails", "~> 0.4.0"
+gem 'dartsass-rails', '~> 0.4.0'
