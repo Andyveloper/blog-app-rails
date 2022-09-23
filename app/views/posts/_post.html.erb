@@ -1,0 +1,18 @@
+<div class= "post_container__posts__full">
+  <div class="post_container__posts__full_content">
+    <span>Post # <%=@post.id%> by <%=@post.author.name%></span>
+    <span>Comments: <%= @post.comments.count%> Likes: <%= @post.likes.count %></span>
+    <p>
+      <%= @post.text%>
+    </p>
+  </div>
+  <div class="post_container__posts__full_comments">
+    <ul>
+    <% @post.comments.each do |comment|%>
+      <li>
+        <%= comment.author.name%>: <%= comment.text %>
+      </li>
+    <%end%>
+    </ul>
+  </div>
+</div>

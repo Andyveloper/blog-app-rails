@@ -10,8 +10,9 @@
 
 ## Getting Started
 
-- Clone the project with `https://github.com/Andyveloper/blog-app-rails`
+- Clone the project with `https://github.com/Andyveloper/blog-app-rails.git`
 - Install the dependencies using `bundle install` command
+- Seed the database with the given data using `rails db:seed` command
 
 ### Run tests
 
