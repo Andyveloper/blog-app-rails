@@ -4,13 +4,14 @@
 <%= render 'users/user'%>
 
 <div class="user_details__bio">
+  <span>Bio:</span>
   <p>
     <%= @user.bio %>
   </p>
 </div>
 
 <div class=user_details__posts>
-  <% @user.posts.each do |post| %>
+  <% @user.most_recent.each do |post| %>
   <div>
     <h3>Post #<%= post.id %></h3>
     <p><%= post.text %></p>
