@@ -1,7 +1,8 @@
 <div class= "post_container__posts__full">
   <div class="post_container__posts__full_content">
-    <span>Post # <%=@post.id%> by <%=@post.author.name%></span>
+    <span>Post # <%=@post.id%> by <%=@post.author.name%> // </span>
     <span>Comments: <%= @post.comments.count%> Likes: <%= @post.likes.count %></span>
+    <h4><%=@post.title%></h4>
     <p>
       <%= @post.text%>
     </p>
@@ -14,6 +15,11 @@
       </li>
     <%end%>
     </ul>
-    <%= link_to '< Back', :back%>
+  <%= render 'comments/form' %>
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |f| %>
+    <div>
+      <%= f.submit 'Like' %>
+    </div>
+  <% end %>
   </div>
 </div>

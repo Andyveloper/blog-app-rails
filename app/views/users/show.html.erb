@@ -22,5 +22,6 @@
   </div>
   <%end%>
   <%end%>
+  <%= link_to 'Create new post', new_user_post_path(@user.id)%>
   <%= link_to 'See all posts', user_posts_path(@user.id)%>
 </div>
