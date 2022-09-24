@@ -15,12 +15,11 @@
       </li>
     <%end%>
     </ul>
-    <%= render 'comments/form' %>
-     <%= form_with url: '/likes' do |form| %>
-        <input type="hidden" name="post" value="<%=@post.id %>">
-        <button type="submit">
-          <i title="Like">Like</i>
-        </button>
-      <% end %> 
+  <%= render 'comments/form' %>
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |f| %>
+    <div>
+      <%= f.submit 'Like' %>
+    </div>
+  <% end %>
   </div>
 </div>

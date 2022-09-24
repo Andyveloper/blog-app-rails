@@ -1,5 +1,5 @@
 <div>
-<%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :post do |form| %>
+<%= form_with model: @post, url: user_posts_path, method: :post, scope: :post do |form| %>
   <%= form.label :title, "Title"%>
   <%= form.text_field :title %>
   <%= form.label :text, "What comes to your mind?"%>

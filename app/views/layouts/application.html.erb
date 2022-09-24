@@ -14,7 +14,7 @@
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
       <% flash.each do |type, msg|%>
-        <div class="alert <%type%>">
+        <div class="alert <%=type%>">
           <%= msg %>
         </div>
       <% end %>

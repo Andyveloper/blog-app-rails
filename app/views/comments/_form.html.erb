@@ -1,7 +1,7 @@
 <div>
-  <%= form_with model: @comment, url: user_post_path, method: :post, local: true, scope: :post do |form|%>
+  <%= form_with model: @comment, url: user_post_comments_url(@user, @post), scope: :comment, method: :post do |form| %>
     <%= form.label :text, "Write your comment here"%>
-    <%= form.text_field :text%>
+    <%= form.text_area :text%>
     <%= form.submit "Send"%>
   <%end%>
 </div>
