@@ -1,2 +1,26 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>User: <%= @user.name %></h1>
+<p>User details:</p>
+<%= link_to '< Back', :back %>
+<%= render 'users/user'%>
+
+<div class="user_details__bio">
+  <span>Bio:</span>
+  <p>
+    <%= @user.bio %>
+  </p>
+</div>
+
+<div class=user_details__posts>
+<h2>Recent Posts:</h2>
+  <%if @user.post_counter == 0%>
+  <h3>This user has no posts</h3>
+  <%else%>
+  <% @user.most_recent.each do |post| %>
+  <div>
+    <h3>Post #<%= post.id %></h3>
+    <p><%= post.text %></p>
+  </div>
+  <%end%>
+  <%end%>
+  <%= link_to 'See all posts', user_posts_path(@user.id)%>
+</div>

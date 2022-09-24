@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   has_many :likes, foreign_key: 'author_id'
 
-  after_initialize do |user|
+  after_create do |user|
     user.post_counter = 0
   end
 

@@ -1,0 +1,29 @@
+<div class="post_container">
+  <div class="post_container__post">
+    <%@posts.each do |post|%>
+    <div class="post_container__post__post">
+      <h2>Post # <%= post.id %></h2>
+      <p><%= post.text %></p>
+      <span>Comments: <%= post.comments.count%> Likes: <%= post.likes.count %></span>
+    </div>
+    <div class="post_container__post__comments">
+      <% if post.comments.empty? %>
+        <h3>There are no comments for this post</h3>
+      <%else%>
+      <ul>
+      <%post.comments.each do |comment|%>
+        <li>
+          <span class="post_container__post__comment">
+            <%= comment.author.name%>: <%= comment.text %>
+          </span>
+        </li>
+      <% end %>
+      </ul>
+      <%= link_to 'See all comments', user_post_path(@user.id, post.id) %>
+      <%end%>
+    </div>
+    <hr>
+    <%end%>
+  </div>
+  <button type="button">Pagination</button>
+</div>  

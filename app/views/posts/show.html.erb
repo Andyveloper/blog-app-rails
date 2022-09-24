@@ -1,2 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%if @comments.empty?%>
+  <h3>This user has no comments</h3>
+<%else%>
+  <%= render 'posts/post' %>
+<%end%>
