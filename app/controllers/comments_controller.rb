@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
-  def new
-    respond_to do |format|
-      format.html { render :new }
-    end
-  end
+  def new; end
 
   def create; end
 end
