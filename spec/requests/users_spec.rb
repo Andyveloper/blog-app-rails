@@ -12,12 +12,13 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to render_template(:index)
     end
     it 'returns correct body placeholder' do
-      expect(response.body).to include('Find me in app/views/users/index.html.erb')
+      expect(response.body).to include('There are no users in the database')
     end
   end
   describe 'GET /show' do
     before(:each) do
-      get user_path(id: 1)
+      user = User.create(name: 'Aiden')
+      get user_path(user.id)
     end
     it 'returns http success' do
       expect(response).to have_http_status(:success)
@@ -26,7 +27,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(:show)
     end
     it 'returns correct body placeholder' do
-      expect(response.body).to include('Find me in app/views/users/show.html.erb')
+      expect(response.body).to include('Aiden')
     end
   end
 end
