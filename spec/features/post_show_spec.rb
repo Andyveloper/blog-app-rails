@@ -33,4 +33,16 @@ RSpec.describe User, type: :feature do
   it 'should render the post\'s body' do
     expect(page).to have_content(@post1.text)
   end
+
+  it 'should render the commentors name' do
+    expect(page).to have_content(@user.name)
+  end
+
+  it 'should render the text of each comment' do
+    @posts.each do |post|
+      post.comments.each do |comment|
+        expect(page).to have_content(comment.text)
+      end
+    end
+  end
 end
