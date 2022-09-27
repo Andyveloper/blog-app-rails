@@ -23,7 +23,8 @@ RSpec.describe User, type: :feature do
 
     it 'See more button should redirect to user profile' do
       visit root_path
-      expect(page).to have_css("a[href*='#{user_path(@user.id)}']")
+      click_on 'See more'
+      expect(page).to have_current_path(user_path(@user.id))
     end
   end
 end

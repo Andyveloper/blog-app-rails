@@ -44,7 +44,8 @@ RSpec.describe User, type: :feature do
 
   it 'redirects me to posts show page' do
     visit user_path(@user.id)
-    expect(page).to have_css("a[href*='/users/#{@user.id}']")
+    click_on 'See all posts'
+    expect(page).to have_current_path(user_posts_path(@user.id))
   end
 
   it 'is a button that let me view user posts' do
