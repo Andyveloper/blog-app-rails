@@ -24,10 +24,15 @@
 
 ### Mauricio Cantillo Moreno
 
-- GitHub: [@Andyveloper](https://github.com/Andyveloper)
-- Twitter: [@MauroCantillo\_](https://twitter.com/MauroCantillo_)
-- LinkedIn: [Mauricio Cantillo Moreno](https://www.linkedin.com/in/mauricio-cantillo-moreno/)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-Andyveloper-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Andyveloper)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-MauroCantillo_-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/MauroCantillo_)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-Mauricio_Cantillo_Moreno-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/mauricio-cantillo-moreno/)
 
+### David Vera
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-indigodavid-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/indigodavid)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-indigo1987-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/indigo1987)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-davidveracastillo-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/david-vera-castillo-001b5756/)
 ## Show your support
 
 Give a ⭐️ if you like this project!
