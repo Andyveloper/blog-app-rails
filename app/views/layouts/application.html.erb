@@ -11,6 +11,19 @@
   </head>
 
   <body class="box-border">
+  <header>
+    <img src='#'>
+    <nav>
+      <ul>
+      <%if user_signed_in?%>
+      <li><%=link_to 'My Profile', user_path(current_user)%></li>
+      <li><%= button_to 'Logout', destroy_user_session_path, method: :delete%>
+      <%else%>
+      <li>Login</li>
+      <%end%>
+      </ul>
+    </nav>
+  </header>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
       <% flash.each do |type, msg|%>
