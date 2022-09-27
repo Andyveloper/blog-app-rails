@@ -21,4 +21,12 @@ RSpec.describe User, type: :feature do
   it 'should show the post\'s author' do
     expect(page).to have_content(@post1.author.name)
   end
+
+  it 'should let me see how many comments it has' do
+    expect(page).to have_content(@post1.comments.count)
+  end
+
+  it 'should let me see how many likes it has' do
+    expect(page).to have_content(@post1.likes_counter)
+  end
 end
