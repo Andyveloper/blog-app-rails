@@ -20,8 +20,8 @@
         </li>
       <% end %>
       </ul>
-      <%= link_to 'See all comments', user_post_path(@user.id, post.id) %>
       <%end%>
+      <%= link_to 'See all comments', user_post_path(@user.id, post.id), id: post.id %>
     </div>
     <hr>
     <%end%>

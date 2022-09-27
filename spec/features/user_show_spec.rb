@@ -39,7 +39,7 @@ RSpec.describe User, type: :feature do
 
   it 'shows a button that let me view user posts' do
     visit user_path(@user.id)
-    expect(page).to have_content("See all posts")
+    expect(page).to have_content('See all posts')
   end
 
   it 'redirects me to posts show page' do
@@ -49,7 +49,7 @@ RSpec.describe User, type: :feature do
 
   it 'is a button that let me view user posts' do
     visit user_path(@user.id)
-    click_on "See all posts"
+    click_on 'See all posts'
     expect(current_path).to eq(user_posts_path(@user.id))
   end
 end
