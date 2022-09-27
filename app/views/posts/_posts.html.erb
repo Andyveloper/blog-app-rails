@@ -12,7 +12,7 @@
         <h3>There are no comments for this post</h3>
       <%else%>
       <ul>
-      <%post.comments.each do |comment|%>
+      <%post.comments.includes([:author]).each do |comment|%>
         <li>
           <span class="post_container__post__comment">
             <%= comment.author.name%>: <%= comment.text %>

@@ -9,7 +9,7 @@
   </div>
   <div class="post_container__posts__full_comments">
     <ul>
-    <% @post.most_recent.each do |comment|%>
+    <% @post.most_recent.includes([:author]).each do |comment|%>
       <li>
         <%= comment.author.name%>: <%= comment.text %>
       </li>
