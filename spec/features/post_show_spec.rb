@@ -29,4 +29,8 @@ RSpec.describe User, type: :feature do
   it 'should let me see how many likes it has' do
     expect(page).to have_content(@post1.likes_counter)
   end
+
+  it 'should render the post\'s body' do
+    expect(page).to have_content(@post1.text)
+  end
 end
