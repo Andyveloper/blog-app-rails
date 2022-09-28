@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   has_many :likes, foreign_key: 'author_id'
 
+  def admin?
+    role == 'admin'
+  end
+
   after_create do |user|
     user.post_counter = 0
   end
