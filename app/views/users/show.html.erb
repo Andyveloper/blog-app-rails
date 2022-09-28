@@ -1,6 +1,6 @@
 <h1>User: <%= @user.name %></h1>
 <p>User details:</p>
-<%= link_to '< Back', :back %>
+<%= link_to '< Back', users_path(@user.id) %>
 <%= render 'users/user'%>
 
 <div class="user_details__bio">

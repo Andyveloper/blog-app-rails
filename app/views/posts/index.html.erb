@@ -1,10 +1,11 @@
 <h1>User: <%= @user.name %></h1>
 <p>User details:</p>
-<%= link_to '< Back', users_path %>
+<%= link_to '< Back', user_path(@user.id) %>
 <%= render 'users/user'%>
 
 <%if @user.posts.empty?%>
   <h3>This user has no posts</h3>
+  <%= link_to 'Create new post', new_user_post_path(@user.id)%>
 <%else%>
   <%= render 'posts/posts' %>
 <%end%>
