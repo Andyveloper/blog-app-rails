@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'likes/create'
+  devise_for :users, path: ""
   resources :users, only: %i[index show] do
     resources :posts, only: %i[index show new create] do
       resources :comments, only: %i[create]

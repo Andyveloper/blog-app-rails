@@ -12,7 +12,7 @@ third_user = User.create(name: 'Jang Na-Young', photo: 'https://scontent.fctg3-1
             
             
 # CREATE POSTS
-post = Post.create(author: first_user, title: "Why do I have to do this?", text: "Im really tired right now, but nobody cares so I have to keep going")
+post = Post.create(author_id: first_user.id, author: first_user, title: "Why do I have to do this?", text: "Im really tired right now, but nobody cares so I have to keep going")
 post2 = Post.create(author: first_user, title: "Have you ever thought you were great?", text: "You know, have you ever thought that? I was thinking maybe I am")
 post3 = Post.create(author: first_user, title: "Too many meetings!!!", text: "Dude we're literally having 40 mandatory meetings a week, what the...?")
 post4 = Post.create(author: first_user, title: "I think the new coworker needs more training", text: "Im not hating or anything, but I believe Na-Young could benefit from some training")
