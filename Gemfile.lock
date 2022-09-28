@@ -125,6 +125,10 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.2)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -152,6 +156,8 @@ GEM
       timeout
     nio4r (2.5.8)
     nokogiri (1.13.8-x64-mingw-ucrt)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
@@ -270,6 +276,8 @@ GEM
     strscan (3.0.4)
     tailwindcss-rails (2.0.14-x64-mingw-ucrt)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.14-x86_64-darwin)
+      railties (>= 6.0.0)
     tailwindcss-rails (2.0.14-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -306,6 +314,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-darwin-19
   x86_64-linux
 
 DEPENDENCIES
@@ -318,6 +327,7 @@ DEPENDENCIES
   devise
   importmap-rails
   jbuilder
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
