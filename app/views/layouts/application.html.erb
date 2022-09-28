@@ -17,9 +17,9 @@
       <ul>
       <%if user_signed_in?%>
       <li><%=link_to 'My Profile', user_path(current_user)%></li>
-      <li><%= button_to 'Logout', destroy_user_session_path, method: :delete%>
+      <li><%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo: false } }%> </li>
       <%else%>
-      <li>Login</li>
+      <li><%=link_to 'Login', new_user_session_path%></li>
       <%end%>
       </ul>
     </nav>
