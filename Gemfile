@@ -57,9 +57,9 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'devise'
   gem 'rspec-rails'
   gem 'webdrivers'
-  gem 'devise'
 end
 
 group :development do
@@ -69,7 +69,7 @@ group :development do
 
   # Gem for sending confirmation emails on development
   gem 'letter_opener'
-  
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
