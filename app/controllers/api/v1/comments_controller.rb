@@ -1,5 +1,7 @@
 class Api::V1::CommentsController < ApplicationController
+  include JsonWebToken
   skip_before_action :verify_authenticity_token
+  before_action :authenticate_request
   def index 
     @comments = Post.find(params[:post_id]).comments
     respond_to do |format|
@@ -11,7 +13,7 @@ class Api::V1::CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    @comment.author = User.find(params[:user_id])
+    @comment.author = @current_user
     @comment.post = @post
     if @comment.save
       render json: @comment, status: :created

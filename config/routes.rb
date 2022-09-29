@@ -14,6 +14,8 @@ Rails.application.routes.draw do
           resources :comments, only: [:create, :index]
         end
       end
+
+      post '/login', to 'authentication#login'
     end
   end 
   root 'users#index'
