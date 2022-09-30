@@ -64,6 +64,7 @@ group :development, :test do
   gem 'devise'
   gem 'rspec-rails'
   gem 'webdrivers'
+  gem 'rswag'
 end
 
 group :development do
