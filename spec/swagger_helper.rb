@@ -16,18 +16,37 @@ RSpec.configure do |config|
   # the root example_group in your specs, e.g. describe '...', swagger_doc: 'v2/swagger.json'
   config.swagger_docs = {
     'v1/swagger.yaml' => {
+      components: {
+        securitySchemes: {
+        BearerAuth: {
+          type: 'http',
+          scheme: 'bearer'
+        }
+      },
+    },
+
+
       openapi: '3.0.1',
       info: {
         title: 'API V1',
         version: 'v1'
       },
       paths: {},
+      securityDefinitions: {
+        oauth: {
+          type: :oauth2,
+          flow: 'password',
+          in: :header,
+          name: 'Authorization',
+          scopes: ['read', 'write']
+        }
+      },
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'localhost:3000'
             }
           }
         }
