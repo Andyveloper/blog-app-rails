@@ -1,5 +1,7 @@
 <%if @comments.empty?%>
+  <%= link_to '< Back', user_path(@user.id)%>
   <h3>This user has no comments</h3>
+    <%= render 'comments/form' %>
 <%else%>
   <%= render 'posts/post' %>
 <%end%>

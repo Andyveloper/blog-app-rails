@@ -9,9 +9,14 @@
   </div>
   <div class="post_container__posts__full_comments">
     <ul>
-    <% @post.most_recent.includes([:author]).each do |comment|%>
+    <% @post.most_recent.each do |comment|%>
       <li>
-        <%= comment.author.name%>: <%= comment.text %>
+        <%= comment.author.name%>: <%= comment.text %> <%=link_to 'Delete Comment', user_post_comment_path(comment.author, @post, comment), 
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: 'Are you sure?'
+        } if can? :manage, comment
+          %>
       </li>
     <%end%>
     </ul>
@@ -22,5 +27,5 @@
     </div>
   <% end %>
   </div>
-  <%= link_to '< Back', :back%>
+  <%= link_to '< Back', user_posts_path(@user.id)%>
 </div>

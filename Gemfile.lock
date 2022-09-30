@@ -77,6 +77,7 @@ GEM
     bullet (7.0.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -125,6 +126,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.2)
+    jwt (2.5.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.8.1)
@@ -320,6 +322,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bullet
+  cancancan
   capybara
   dartsass-rails (~> 0.4.0)
   database_cleaner
@@ -327,6 +330,7 @@ DEPENDENCIES
   devise
   importmap-rails
   jbuilder
+  jwt
   letter_opener
   pg (~> 1.1)
   puma (~> 5.0)

@@ -1,6 +1,6 @@
 <div class="post_container">
   <div class="post_container__post">
-    <%@posts.each do |post|%>
+    <%@posts.includes([:author]).each do |post|%>
     <div class="post_container__post__post">
       <h2>Post # <%= post.id %></h2>
       <h3><%= post.title %></h3>
@@ -10,6 +10,11 @@
     <div class="post_container__post__comments">
       <% if post.comments.empty? %>
         <h3>There are no comments for this post</h3>
+          <%= link_to 'Create comment', user_post_path(@user.id, post.id), id: post.id %>
+          <%= link_to 'Delete Post', user_post_path(@user.id, post.id), data: {
+          turbo_method: :delete,
+          turbo_confirm: 'Are you sure you want to delete this post?'
+                } if can? :manage, post %>
       <%else%>
       <ul>
       <%post.comments.includes([:author]).each do |comment|%>
@@ -20,8 +25,13 @@
         </li>
       <% end %>
       </ul>
+        <%= link_to 'See all comments', user_post_path(@user.id, post.id), id: post.id %>
+        <%= link_to 'Delete Post', user_post_path(@user.id, post.id), data: {
+          turbo_method: :delete,
+          turbo_confirm: 'Are you sure you want to delete this post?'
+        } if can? :manage, post
+        %>
       <%end%>
-      <%= link_to 'See all comments', user_post_path(@user.id, post.id), id: post.id %>
     </div>
     <hr>
     <%end%>
