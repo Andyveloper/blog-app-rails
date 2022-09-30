@@ -7,6 +7,7 @@ RSpec.describe 'api/v1/posts', type: :request do
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
 
     get('list posts') do
+      tags 'Posts'
       response(200, 'successful') do
         let(:user_id) { '123' }
 
