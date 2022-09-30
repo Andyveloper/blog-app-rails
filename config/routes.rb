@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         end
       end
 
-      post '/login', to 'authentication#login'
+      post '/login', to: 'authentication#login'
     end
   end 
   root 'users#index'
