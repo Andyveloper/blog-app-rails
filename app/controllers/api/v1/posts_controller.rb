@@ -10,10 +10,8 @@ class Api::V1::PostsController < ApplicationController
       format.html { render json: @posts }
     end
   end
-  
-  private
-  def authenticate_user
-    
-  end
 
+  private
+
+  def authenticate_user; end
 end

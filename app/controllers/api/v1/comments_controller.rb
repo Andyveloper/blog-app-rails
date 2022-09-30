@@ -2,7 +2,7 @@ class Api::V1::CommentsController < ApplicationController
   include JsonWebToken
   skip_before_action :verify_authenticity_token
   before_action :authenticate_request
-  def index 
+  def index
     @comments = Post.find(params[:post_id]).comments
     respond_to do |format|
       format.json { render json: @comments }
