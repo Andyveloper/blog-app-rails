@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -18,13 +16,12 @@ RSpec.configure do |config|
     'v1/swagger.yaml' => {
       components: {
         securitySchemes: {
-        BearerAuth: {
-          type: 'http',
-          scheme: 'bearer'
+          BearerAuth: {
+            type: 'http',
+            scheme: 'bearer'
+          }
         }
       },
-    },
-
 
       openapi: '3.0.1',
       info: {
@@ -38,7 +35,7 @@ RSpec.configure do |config|
           flow: 'password',
           in: :header,
           name: 'Authorization',
-          scopes: ['read', 'write']
+          scopes: %w[read write]
         }
       },
       servers: [

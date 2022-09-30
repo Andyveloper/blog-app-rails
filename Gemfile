@@ -63,8 +63,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'devise'
   gem 'rspec-rails'
-  gem 'webdrivers'
   gem 'rswag'
+  gem 'webdrivers'
 end
 
 group :development do
