@@ -1,0 +1,107 @@
+---
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/login":
+    post:
+      summary: Login Authentication
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: Successful
+        '401':
+          description: Unauthorized
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/api/v1/users/{user_id}/posts/{post_id}/comments":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: post_id
+      in: path
+      description: post_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List Comments
+      tags:
+      - Comments
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          description: Successful
+    post:
+      summary: Create Comment
+      tags:
+      - Comments
+      security:
+      - BearerAuth: []
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+  "/api/v1/users/{user_id}/posts":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list posts
+      tags:
+      - Posts
+      responses:
+        '200':
+          description: successful
+securityDefinitions:
+  oauth:
+    type: oauth2
+    flow: password
+    in: header
+    name: Authorization
+    scopes:
+    - read
+    - write
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
