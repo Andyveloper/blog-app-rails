@@ -7,8 +7,12 @@ RSpec.describe 'api/v1/comments', type: :request do
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
     parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
 
-    get('list comments') do
-      response(200, 'successful') do
+    get('List Comments') do
+      produces 'application/json'
+      tags 'Comments'
+      security [ BearerAuth: [] ]
+
+      response(200, 'Successful') do
         let(:user_id) { '123' }
         let(:post_id) { '123' }
 
@@ -23,7 +27,17 @@ RSpec.describe 'api/v1/comments', type: :request do
       end
     end
 
-    post('create comment') do
+    post('Create Comment') do
+      tags 'Comments'
+      consumes 'application/json'
+      security [ BearerAuth: [] ]
+      parameter text: :string, in: :body, schema: {
+        type: :object,
+        properties: {
+          text: { type: :string }
+        },
+        required: ["text"]
+      }
       response(200, 'successful') do
         let(:user_id) { '123' }
         let(:post_id) { '123' }
